@@ -6,21 +6,13 @@ from io import BytesIO
 
 st.title("📦 Inventory Dashboard")
 
-# File uploader
-st.subheader("📤 Upload Inventory Excel File")
-uploaded_file = st.file_uploader("Upload an Excel file", type=["xlsx", "xls"])
-
-if uploaded_file:
-    df = pd.read_excel(uploaded_file)
-    st.success("File uploaded successfully!")
-else:
-    # Sample inventory data if no file is uploaded
-    data = {
-        "Item": ["Product A", "Product B", "Product C"],
-        "Stock Level": [50, 10, 5],
-        "Reorder Level": [30, 20, 10]
-    }
-    df = pd.DataFrame(data)
+# Sample inventory data
+data = {
+    "Item": ["Product A", "Product B", "Product C"],
+    "Stock Level": [50, 10, 5],
+    "Reorder Level": [30, 20, 10]
+}
+df = pd.DataFrame(data)
 
 # Display inventory table
 st.subheader("Current Inventory Levels")
